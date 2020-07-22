@@ -1,0 +1,29 @@
+{
+  "name": "main",
+  "private": true,
+  "scripts": {
+    "start": "webpack --watch",
+    "serve": "serve dist -p 3002",
+    "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "@babel/core": "^7.10.5",
+    "babel-loader": "^8.1.0",
+    "concurrently": "^5.2.0",
+    "serve": "^11.3.2",
+    "vue": "^3.0.0-rc.4",
+    "webpack-cli": "^3.3.12",
+    "wsrun": "^5.2.1"
+  },
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.0.0-rc.4",
+    "css-loader": "^3.4.2",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "git://github.com/ScriptedAlchemy/html-webpack-plugin#master",
+    "mini-css-extract-plugin": "^0.9.0",
+    "url-loader": "^4.0.0",
+    "vue-loader": "^16.0.0-beta.4",
+    "webpack": "git://github.com/webpack/webpack.git#dev-1",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
