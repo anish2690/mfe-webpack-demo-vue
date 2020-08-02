@@ -1,25 +1,24 @@
 <template>
   <div>
-    <img src="./logo.png" width="30" />
-    <h1>Layout App</h1>
+    <h3>Main App</h3>
     <Content />
     <Button />
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
-const Content = () => import("home/Content");
-const Button = () => import("home/Button");
-
-// import Content from "mainRemote/Content";
-// import Button from "mainRemote/Button";
-
+import { ref, defineAsyncComponent } from "vue";
+// import Content from "./components/Content";
+// import Button from "./components/Button";
 export default {
   components: {
-    Content,
-    Button,
+    Content: defineAsyncComponent(() => import("./components/Content")),
+    Button: defineAsyncComponent(() => import("./components/Button")),
   },
+  // components: {
+  //   Content,
+  //   Button,
+  // },
   setup() {
     const count = ref(0);
     const inc = () => {
