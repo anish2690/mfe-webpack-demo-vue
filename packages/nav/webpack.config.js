@@ -2,13 +2,15 @@ const path = require('path')
 const { VueLoaderPlugin } = require('vue-loader')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-
+const { ModuleFederationPlugin } = require("webpack").container;
 module.exports = (env = {}) => ({
-  // mode: env.prod ? 'production' : 'development',
   mode: 'development',
+  cache: false,
   devtool: 'source-map',
-  // devtool: env.prod ? 'source-map' : 'cheap-module-eval-source-map',
+  optimization: {
+    minimize: false
+  },
+  target: "web",
   entry: path.resolve(__dirname, './src/main.js'),
   // output: {
   //   path: path.resolve(__dirname, './dist'),
@@ -57,27 +59,32 @@ module.exports = (env = {}) => ({
       filename: '[name].css'
     }),
     new ModuleFederationPlugin({
-      name: "nav",
-      library: { type: "var", name: "nav" },
+      name: "layout",
+      library: { type: "var", name: "layout" },
       filename: "remoteEntry.js",
       remotes: {
-        main: 'main'
+        home: 'home'
       },
       exposes: {
       },
-      shared: ["vue"]
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "./index.html"),
+      chunks: ['main']
     }),
     new VueLoaderPlugin(),
 
   ],
   devServer: {
-    inline: true,
+    contentBase: path.join(__dirname),
+    compress: true,
+    port: 3001,
     hot: true,
-    stats: 'minimal',
-    contentBase: __dirname,
-    overlay: true
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+      "Access-Control-Allow-Headers":
+        "X-Requested-With, content-type, Authorization",
+    },
   }
 })

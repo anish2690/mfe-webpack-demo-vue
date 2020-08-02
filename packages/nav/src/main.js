@@ -1,4 +1,8 @@
 import { createApp } from 'vue'
-import Nav from './Nav.vue'
+import Layout from './Layout.vue'
 
-createApp(Nav).mount('#app')
+const app = createApp(Layout)
+
+app.config.devtools = true
+
+app.mount('#app')

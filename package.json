@@ -5,7 +5,8 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "build": "yarn workspaces run build",
+    "dev": "wsrun --parallel dev",
+    "build": "npm  workspaces run build",
     "serve": "wsrun --parallel serve",
     "start": "concurrently \"wsrun --parallel start\" \"wsrun --parallel serve\""
   },

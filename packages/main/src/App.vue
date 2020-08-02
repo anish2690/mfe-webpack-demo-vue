@@ -1,16 +1,19 @@
 <template>
   <div>
-    <Content></Content>
+    <h3>Main App</h3>
+    <Content />
+    <Button />
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
-import Content from "./Content";
-
+import vue, { ref } from "vue";
+import Content from "./components/Content";
+import Button from "./components/Button";
 export default {
   components: {
     Content,
+    Button,
   },
   setup() {
     const count = ref(0);
