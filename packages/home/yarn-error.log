@@ -1,0 +1,59 @@
+Arguments: 
+  /Users/anish/.nvm/versions/node/v12.16.1/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js
+
+PATH: 
+  /Users/anish/Downloads/google-cloud-sdk/bin:/Users/anish/.nvm/versions/node/v12.16.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  12.16.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/anish/Documents/workspace/oss/mfe-webpack-demo-vue/packages/home/package.json: Unexpected token } in JSON at position 349
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:310:30)
+      at /usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "home",
+    "private": true,
+    "version": "1.0.0",
+    "scripts": {
+      "start": "webpack --watch",
+      "serve": "serve dist -p 3002",
+      "build": "webpack --mode production",
+      "dev": "webpack-dev-server"
+    },
+    "dependencies": {
+      "@babel/core": "^7.11.0",
+      "babel-loader": "^8.1.0",
+      "serve": "^11.3.2",
+      "vue": "^3.0.0",
+    },
+    "devDependencies": {
+      "@vue/compiler-sfc": "^3.0.0",
+      "vue-loader": "^16.0.0-beta.7",
+      "css-loader": "^3.6.0",
+      "file-loader": "^6.0.0",
+      "html-webpack-plugin": "git://github.com/ScriptedAlchemy/html-webpack-plugin.git#master",
+      "mini-css-extract-plugin": "^0.9.0",
+      "url-loader": "^4.0.0",
+      "webpack": "^5.0.0-beta.32",
+      "webpack-dev-server": "^3.11.0",
+      "webpack-cli": "^3.3.12"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

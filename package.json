@@ -5,20 +5,20 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "dev": "wsrun --parallel dev",
+    "dev": "lerna  run --parallel dev",
     "build": "yarn workspaces run build",
-    "serve": "wsrun --parallel serve",
+    "serve": "lerna run --parallel serve",
     "start": "concurrently \"wsrun --parallel start\" \"wsrun --parallel serve\""
   },
   "keywords": [],
+  "author": "",
+  "license": "ISC",
   "workspaces": [
     "packages/*"
   ],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
     "concurrently": "^5.1.0",
+    "lerna": "^3.22.1",
     "wsrun": "^5.2.1"
   }
 }
