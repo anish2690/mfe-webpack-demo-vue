@@ -64,6 +64,15 @@ module.exports = (env = {}) => ({
         './Content': './src/components/Content',
         './Button': './src/components/Button'
       },
+      shared: {
+        vue: {
+          singleton: true,
+        },
+        '@vue/compiler-sfc': {
+          singleton: true,
+        }
+      }
+
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "./index.html"),
