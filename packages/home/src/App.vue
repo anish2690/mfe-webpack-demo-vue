@@ -3,6 +3,7 @@
     <h3>Main App</h3>
     <Content />
     <Button />
+    <ButtonRenderFunc />
   </div>
 </template>
 
@@ -14,6 +15,9 @@ export default {
   components: {
     Content: defineAsyncComponent(() => import("./components/Content")),
     Button: defineAsyncComponent(() => import("./components/Button")),
+    ButtonRenderFunc: defineAsyncComponent(() =>
+      import("./components/ButtonRenderFunc")
+    ),
   },
   // components: {
   //   Content,

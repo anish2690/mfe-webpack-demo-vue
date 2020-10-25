@@ -12,21 +12,14 @@ module.exports = (env = {}) => ({
   },
   target: "web",
   entry: path.resolve(__dirname, './src/main.js'),
-  // output: {
-  //   path: path.resolve(__dirname, './dist'),
-  //   publicPath: '/dist/'
-  // },
+
   output: {
     publicPath: "http://localhost:3001/"
   },
   resolve: {
     extensions: [".vue", ".jsx", ".js", ".json"],
     alias: {
-      // this isn't technically needed, since the default `vue` entry for bundlers
-      // is a simple `export * from '@vue/runtime-dom`. However having this
-      // extra re-export somehow causes webpack to always invalidate the module
-      // on the first HMR update and causes the page to reload.
-      'vue': '@vue/runtime-dom'
+      'vue': 'vue/dist/vue.esm-bundler.js'
     }
   },
   module: {
@@ -63,7 +56,7 @@ module.exports = (env = {}) => ({
       library: { type: "var", name: "layout" },
       filename: "remoteEntry.js",
       remotes: {
-        home: 'home'
+        home: "home@http://localhost:3002/remoteEntry.js",
       },
       exposes: {
       },

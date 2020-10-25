@@ -1,14 +1,8 @@
-import { render, h } from 'vue'
-const button = {
+import { defineComponent } from 'vue'
+import ButtonRenderFunc from './ButtonRenderFunc'
+const button = defineComponent({
     name: 'btn-component',
-    render() {
-        return h(
-            'button',
-            {
-                id: 'btn-primary'
-            },
-            'Hello World'
-        )
-    }
-}
+    components: { ButtonRenderFunc },
+    template: '<button style="color:green">Template Function Button</button> <ButtonRenderFunc />'
+})
 export default button
