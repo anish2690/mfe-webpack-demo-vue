@@ -66,7 +66,10 @@ module.exports = (env = {}) => ({
         },
         '@vue/compiler-sfc': {
           singleton: true,
-        }
+        },
+        'vue-loader': {
+          singleton: true,
+        },
       }
 
     }),
